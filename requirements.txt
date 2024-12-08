@@ -1,0 +1,15 @@
+# app
+django
+djangorestframework
+django-filter
+
+djangorestframework-jsonapi
+
+# DB
+mysqlclient
+
+# tests
+pytest
+pytest-django
+pytest-factoryboy
+pytest-cov

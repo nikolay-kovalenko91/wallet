@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src
+    depends_on:
+      - db
+    environment:
+      DEBUG: 1
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wallet_db
+      MYSQL_ROOT_PASSWORD: secret-root-pw
+    ports:
+      - "3306:3306"
